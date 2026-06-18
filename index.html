@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社ジャパンメディカルイノベーション｜“診る医師”が、“経営する医師”を、つくる。</title>
+<meta name="description" content="自らクリニックを開業・経営し、収益を上げてきた医師が代表を務める開業コンサルティング会社。開業前の設計から開業後の集患・実務・数字づくりまで、開業の不安を先回りして整理します。">
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root{
+    --navy:#17181b;        /* structural near-black (logo black) */
+    --blue:#d70c19;        /* brand red (logo red) — primary accent/CTA */
+    --blue-light:#fdebec;  /* pale red tint */
+    --blue-mid:#e8323d;    /* lighter red for gradients */
+    --ink:#1d2024;
+    --gray:#5d636b;
+    --line:#e7e9ec;
+    --bg:#ffffff;
+    --bg-soft:#f7f8f9;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(20,20,22,.10);
+    --shadow-sm:0 4px 14px rgba(20,20,22,.07);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink);
+    line-height:1.85;
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"palt";
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{position:relative}
+  .eyebrow{
+    display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.18em;
+    color:var(--blue);text-transform:uppercase;margin-bottom:14px;
+  }
+  .sec-title{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:800;letter-spacing:.02em;line-height:1.45;color:var(--navy)}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .lead{color:var(--gray);font-size:1.02rem;margin-top:16px}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5em;justify-content:center;
+    font-weight:700;border-radius:999px;padding:15px 30px;font-size:1rem;
+    transition:.25s ease;cursor:pointer;border:2px solid transparent;white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--blue-mid),var(--blue));color:#fff;box-shadow:0 8px 22px rgba(215,12,25,.32)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(215,12,25,.42)}
+  .btn-ghost{background:#fff;color:var(--blue);border-color:var(--blue)}
+  .btn-ghost:hover{background:var(--blue-light)}
+  .btn-arrow::after{content:"→";font-weight:700;transition:transform .2s}
+  .btn:hover.btn-arrow::after{transform:translateX(3px)}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+  .logo{display:flex;align-items:center;gap:11px;color:var(--navy);flex:none}
+  .logo .mark{width:38px;height:38px;display:grid;place-items:center;flex:none}
+  .logo .mark img{width:38px;height:38px;object-fit:contain;display:block}
+  .logo .name{display:block;font-size:.98rem;font-weight:800;line-height:1.2;letter-spacing:.01em;white-space:nowrap}
+  .logo small{display:block;font-size:.6rem;font-weight:600;color:var(--gray);letter-spacing:.1em;white-space:nowrap}
+  .nav-links{display:flex;align-items:center;gap:24px}
+  .nav-links a{font-size:.9rem;font-weight:600;color:var(--ink);transition:color .2s;white-space:nowrap}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .nav-cta .btn{padding:11px 22px;font-size:.9rem}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:
+      radial-gradient(900px 500px at 85% -10%,rgba(215,12,25,.09),transparent 60%),
+      linear-gradient(180deg,#fdf6f6 0%,#ffffff 100%);}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:84px 0 92px}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:900;line-height:1.4;letter-spacing:.01em;color:var(--navy)}
+  .hero h1 .hl{color:var(--blue);position:relative;white-space:nowrap}
+  .hero p.sub{margin-top:26px;color:var(--gray);font-size:1.06rem;max-width:36em}
+  .hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-visual{position:relative}
+  .hero-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
+    padding:30px;position:relative;
+  }
+  .hero-card .pill{display:inline-block;background:var(--blue-light);color:var(--blue);font-weight:700;font-size:.78rem;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+  .hero-card h3{color:var(--navy);font-size:1.15rem;margin-bottom:6px}
+  .hero-card .stat{display:flex;align-items:baseline;gap:8px;margin:18px 0 4px}
+  .hero-card .stat b{font-size:2.4rem;font-weight:900;color:var(--blue);line-height:1}
+  .hero-card .stat span{color:var(--gray);font-size:.9rem}
+  .hero-card .note{font-size:.78rem;color:#9aa7b3;margin-top:6px}
+  .hero-badge{
+    position:absolute;top:-18px;right:-14px;background:var(--navy);color:#fff;
+    border-radius:14px;padding:14px 18px;font-weight:800;font-size:.86rem;box-shadow:var(--shadow);line-height:1.5;
+  }
+  .hero-badge b{display:block;font-size:1.05rem;color:#ff8b92}
+
+  /* Problem */
+  .problem{background:var(--navy);color:#fff;padding:96px 0}
+  .problem .sec-title{color:#fff}
+  .problem .lead{color:#b9cbdb}
+  .prob-intro{max-width:42em;margin:0 auto 44px;text-align:center}
+  .prob-intro p{color:#c9d8e6}
+  .prob-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .prob-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:28px 24px}
+  .prob-card .num{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.06em;color:#ff8b92;background:rgba(255,90,100,.12);padding:4px 11px;border-radius:999px;margin-bottom:16px}
+  .prob-card h4{font-size:1.04rem;line-height:1.7;margin-bottom:0;color:#fff;font-weight:700}
+  .prob-card p{color:#aebfce;font-size:.94rem}
+  .prob-closer{text-align:center;margin-top:46px;font-size:1.2rem;font-weight:700;color:#fff}
+  .prob-closer .em{color:#ff5a64}
+
+  /* Solution (不安→具体的解決) */
+  .solution{padding:96px 0;background:var(--bg-soft)}
+  .sol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
+  .sol-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 32px;box-shadow:var(--shadow-sm);transition:.3s ease}
+  .sol-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .sol-cat{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--blue);background:var(--blue-light);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+  .sol-card h3{font-size:1.16rem;color:var(--navy);line-height:1.55;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  /* Zone A: ありがちな不安（控えめ） */
+  .sol-anxiety{border-left:2px solid var(--line);padding:2px 0 2px 16px;margin-bottom:18px}
+  .sol-anxiety .z-lbl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.06em;color:#9aa7b3;margin-bottom:5px}
+  .sol-anxiety p{color:#8b929b;font-size:.88rem;line-height:1.8}
+  /* Zone B: JMIの打ち手（主役・赤枠パネル） */
+  .sol-do{background:#fbf6f6;border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:18px 20px;margin-bottom:18px}
+  .sol-do .z-lbl{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--blue);padding:3px 11px;border-radius:6px;margin-bottom:11px}
+  .sol-do p{color:var(--ink);font-size:.93rem;line-height:1.85}
+  .sol-do .em{color:var(--blue);font-weight:800}
+  .sol-do:last-child{margin-bottom:0}
+  .sol-closer{text-align:center;margin-top:46px;font-size:1.06rem;font-weight:700;color:var(--navy);max-width:40em;margin-left:auto;margin-right:auto}
+
+  /* Strength */
+  .strength{padding:96px 0;background:var(--bg)}
+  .str-list{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .str-card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;
+    transition:.3s ease;position:relative;overflow:hidden;
+  }
+  .str-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--blue-mid),var(--navy));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .str-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);background:#fff}
+  .str-card:hover::before{transform:scaleX(1)}
+  .str-ico{width:54px;height:54px;border-radius:14px;background:var(--blue-light);display:grid;place-items:center;margin-bottom:20px;color:var(--blue)}
+  .str-ico svg{width:28px;height:28px}
+  .str-card .no{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--blue)}
+  .str-card h3{font-size:1.22rem;color:var(--navy);margin:8px 0 12px;line-height:1.5}
+  .str-card p{color:var(--gray);font-size:.95rem}
+
+  /* Stats */
+  .stats{padding:96px 0;background:linear-gradient(180deg,#fdf6f6,#f7f8f9)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stat-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;text-align:center;box-shadow:var(--shadow-sm)}
+  .stat-box b{display:block;font-size:2.3rem;font-weight:900;color:var(--blue);line-height:1.1}
+  .stat-box .lbl{color:var(--gray);font-size:.9rem;margin-top:10px}
+  .stat-box .tag{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:14px}
+
+  /* Services */
+  .services{padding:96px 0;background:var(--bg)}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .svc-card{
+    display:flex;gap:22px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px;transition:.3s ease;
+  }
+  .svc-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#cfe0ef}
+  .svc-no{flex:none;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-weight:900;font-size:1.2rem;color:#fff;background:linear-gradient(135deg,var(--blue-mid),var(--navy))}
+  .svc-body h3{font-size:1.18rem;color:var(--navy);margin-bottom:8px}
+  .svc-body p{color:var(--gray);font-size:.94rem}
+
+  /* Flow */
+  .flow{padding:96px 0;background:var(--bg-soft)}
+  .flow-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+  .flow-step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center;position:relative}
+  .flow-step .circle{width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center;margin:0 auto 16px;font-size:1.05rem}
+  .flow-step h4{font-size:.98rem;color:var(--navy);line-height:1.5}
+  .flow-step .st{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--blue);display:block;margin-bottom:6px}
+  .flow-step:not(:last-child)::after{content:"";position:absolute;top:50px;right:-12px;width:24px;height:2px;background:var(--blue-mid);z-index:1}
+
+  /* Message */
+  .message{padding:96px 0;background:var(--navy);color:#fff;overflow:hidden;position:relative}
+  .message::before{content:"";position:absolute;top:-120px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(215,12,25,.28),transparent 70%)}
+  .msg-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;position:relative}
+  .msg-photo{aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#2b2b2e,#0a0a0b);display:grid;place-items:center;color:rgba(255,255,255,.45);font-size:.9rem;border:1px solid rgba(255,255,255,.12)}
+  .msg-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .message .sec-title{color:#fff;margin-bottom:24px}
+  .message p{color:#c9d8e6;margin-bottom:18px}
+  .msg-sign{margin-top:26px;font-weight:700;color:#fff}
+  .msg-sign small{display:block;color:#ff8b92;font-weight:600;font-size:.82rem}
+
+  /* FAQ */
+  .faq{padding:96px 0;background:var(--bg)}
+  .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq-item{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+  .faq-q{display:flex;align-items:flex-start;gap:14px;padding:22px 24px;cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
+  .faq-q::-webkit-details-marker{display:none}
+  .faq-q .q{flex:none;color:var(--blue);font-weight:900}
+  .faq-q .ico{margin-left:auto;flex:none;transition:transform .25s;color:var(--blue)}
+  details[open] .faq-q .ico{transform:rotate(45deg)}
+  .faq-a{padding:0 24px 22px 60px;color:var(--gray);font-size:.95rem}
+
+  /* Case & Interview */
+  .cases{padding:96px 0;background:var(--bg-soft)}
+  .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
+  .case-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow-sm);transition:.3s ease;position:relative;display:flex;flex-direction:column;
+  }
+  .case-card::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--blue-mid),var(--navy));transform:scaleY(0);transform-origin:top;transition:transform .35s}
+  .case-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .case-card:hover::before{transform:scaleY(1)}
+  .case-photo{aspect-ratio:16/9;background:linear-gradient(150deg,#ececee,#f7f8f9);display:grid;place-items:center;color:#aab1b9;font-size:.84rem;border-bottom:1px solid var(--line);text-align:center;line-height:1.6}
+  .case-inner{padding:30px 30px 32px}
+  .case-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;color:var(--blue);background:var(--blue-light);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+  .case-card h3{font-size:1.16rem;color:var(--navy);line-height:1.55;margin-bottom:12px}
+  .case-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .case-meta span{font-size:.78rem;color:var(--gray);background:var(--bg-soft);border:1px solid var(--line);padding:4px 10px;border-radius:6px}
+  .case-block{margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+  .case-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+  .case-block .lbl{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--navy);padding:3px 11px;border-radius:6px;margin-bottom:7px}
+  .case-block.is-do .lbl{background:var(--blue)}
+  .case-block.is-result .lbl{background:linear-gradient(135deg,var(--blue-mid),var(--navy))}
+  .case-block p{color:var(--gray);font-size:.92rem;line-height:1.8}
+  .ph{color:#b1b7be;font-style:normal}
+
+  /* Interview */
+  .interview-card{
+    margin-top:28px;background:var(--navy);color:#fff;border-radius:20px;overflow:hidden;
+    display:grid;grid-template-columns:.85fr 1.15fr;box-shadow:var(--shadow);position:relative;
+  }
+  .interview-photo{background:linear-gradient(160deg,#2b2b2e,#0a0a0b);display:grid;place-items:center;color:rgba(255,255,255,.45);font-size:.86rem;text-align:center;line-height:1.7;min-height:340px;border-right:1px solid rgba(255,255,255,.1)}
+  .interview-body{padding:48px 46px}
+  .interview-body .iv-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:#ff8b92;background:rgba(255,90,100,.12);padding:5px 12px;border-radius:999px;margin-bottom:18px}
+  .interview-body .iv-quote{font-size:clamp(1.2rem,2.4vw,1.5rem);font-weight:800;line-height:1.6;color:#fff;margin-bottom:14px}
+  .interview-body .iv-name{font-weight:700;color:#fff;margin-bottom:28px}
+  .interview-body .iv-name small{display:block;color:#ff8b92;font-weight:600;font-size:.82rem;margin-top:2px}
+  .iv-qa{margin-bottom:18px}
+  .iv-qa:last-child{margin-bottom:0}
+  .iv-qa .iv-q{font-weight:700;color:#fff;font-size:.98rem;display:flex;gap:10px;margin-bottom:6px}
+  .iv-qa .iv-q span{color:#ff8b92;font-weight:900;flex:none}
+  .iv-qa .iv-a{color:#c9d8e6;font-size:.93rem;line-height:1.85;padding-left:26px}
+
+  /* Cases notice (公開できる仮置きパネル) */
+  .cases-notice{
+    max-width:760px;margin:8px auto 0;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow-sm);
+    padding:52px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .cases-notice::before{content:"";position:absolute;inset:0 auto auto 0;height:4px;width:100%;background:linear-gradient(90deg,var(--blue),var(--navy))}
+  .cases-notice h3{font-size:clamp(1.18rem,2.4vw,1.5rem);font-weight:800;color:var(--navy);line-height:1.6;margin-bottom:16px}
+  .cases-notice p{color:var(--gray);font-size:1rem;line-height:1.9;max-width:34em;margin:0 auto}
+  @media(max-width:680px){.cases-notice{padding:40px 26px}}
+
+  /* Closing CTA */
+  .closing{padding:90px 0}
+  .closing-inner{
+    background:linear-gradient(135deg,var(--blue),var(--navy));border-radius:24px;
+    padding:64px 48px;text-align:center;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .closing-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 80% 120%,rgba(255,255,255,.14),transparent)}
+  .closing-inner h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;line-height:1.5;position:relative}
+  .closing-inner p{color:#f6dadc;margin:18px auto 32px;max-width:34em;position:relative}
+  .closing-inner .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+  .closing-inner .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+  .closing-inner .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+  /* Contact form */
+  .contact{padding:96px 0;background:var(--bg)}
+  .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:48px;align-items:start}
+  .contact-intro .sec-title{text-align:left}
+  .contact-intro .lead{margin-top:14px}
+  .contact-points{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+  .contact-points .pt{display:flex;gap:14px;align-items:flex-start}
+  .contact-points .pt .ck{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:.8rem}
+  .contact-points .pt p{color:var(--ink);font-size:.96rem;font-weight:600;line-height:1.6}
+  .contact-points .pt small{display:block;color:var(--gray);font-weight:500;font-size:.86rem;margin-top:2px}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px 38px;box-shadow:var(--shadow-sm)}
+  .form-row{margin-bottom:20px}
+  .form-row label{display:block;font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .form-row label .req{display:inline-block;font-size:.68rem;font-weight:800;color:#fff;background:var(--blue);padding:2px 8px;border-radius:5px;margin-left:8px;letter-spacing:.04em;vertical-align:middle}
+  .form-row label .opt{display:inline-block;font-size:.68rem;font-weight:700;color:var(--gray);background:var(--bg-soft);border:1px solid var(--line);padding:2px 8px;border-radius:5px;margin-left:8px;letter-spacing:.04em;vertical-align:middle}
+  .form-row input,.form-row select,.form-row textarea{
+    width:100%;font:inherit;font-size:.96rem;color:var(--ink);background:var(--bg-soft);
+    border:1px solid var(--line);border-radius:10px;padding:13px 15px;transition:.2s ease;
+  }
+  .form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(215,12,25,.1)}
+  .form-row textarea{resize:vertical;min-height:120px;line-height:1.7}
+  .form-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .form-consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 24px;font-size:.9rem;color:var(--gray);line-height:1.7}
+  .form-consent input{flex:none;width:18px;height:18px;margin-top:3px;accent-color:var(--blue)}
+  .form-consent a{color:var(--blue);font-weight:700;text-decoration:underline}
+  .form-card .btn-primary{width:100%}
+  .form-note{text-align:center;font-size:.82rem;color:#9aa7b3;margin-top:16px;line-height:1.7}
+
+  /* Footer */
+  footer{background:var(--navy);color:#aebfce;padding:60px 0 30px;border-top:4px solid var(--blue)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-logo{color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:14px}
+  .foot-grid p{font-size:.9rem;line-height:1.9}
+  .foot-col h5{color:#fff;font-size:.82rem;letter-spacing:.1em;margin-bottom:16px;font-weight:700}
+  .foot-col a{display:block;font-size:.9rem;padding:5px 0;transition:color .2s}
+  .foot-col a:hover{color:#fff}
+  .copy{text-align:center;font-size:.8rem;padding-top:26px;color:#7f93a8}
+
+  /* Floating CTA */
+  .float-cta{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:10px}
+  .float-cta .btn{box-shadow:var(--shadow)}
+
+  /* Responsive */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:40px;padding:60px 0}
+    .hero-visual{max-width:440px}
+    .prob-cards,.str-list,.stat-grid,.svc-grid{grid-template-columns:1fr 1fr}
+    .flow-steps{grid-template-columns:1fr 1fr 1fr}
+    .flow-step::after{display:none}
+    .msg-grid{grid-template-columns:1fr}
+    .msg-photo{max-width:340px;margin:0 auto}
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .foot-grid{grid-template-columns:1fr}
+    .case-grid{grid-template-columns:1fr}
+    .interview-card{grid-template-columns:1fr}
+    .interview-photo{min-height:240px;border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .contact-intro .sec-title{text-align:center}
+  }
+  @media(max-width:560px){
+    .prob-cards,.str-list,.stat-grid,.svc-grid,.flow-steps,.sol-grid{grid-template-columns:1fr}
+    .interview-body{padding:36px 26px}
+    .form-card{padding:32px 22px}
+    .form-two{grid-template-columns:1fr}
+    .nav-cta .btn-ghost{display:none}
+    .closing-inner{padding:48px 24px}
+    .hero-badge{display:none}
+    .float-cta{right:14px;bottom:14px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <span class="mark"><img src="assets/logo.png" alt="JMI ロゴ"></span>
+      <span><span class="name">Japan Medical Innovation</span><small>株式会社ジャパンメディカルイノベーション</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#strength">強み</a>
+      <a href="#services">支援内容</a>
+      <a href="#cases">事例</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">開業の不安を相談する</a>
+      <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">医師が代表を務める開業コンサルティング</span>
+      <h1>アドバイスではなく、<br><span class="hl">経験</span>で設計する。</h1>
+      <p class="sub">開業は、物件を決めて終わりではありません。立地・内装・医療機器から、集患・資金繰り・採用・実務まで——開業してから表面化しやすい不安を、自らクリニックを開業・経営してきた医師が、開業前の設計で先回りして整理します。</p>
+      <div class="actions">
+        <a href="#contact" class="btn btn-primary btn-arrow">開業の不安を相談する</a>
+        <a href="#services" class="btn btn-ghost">支援範囲を見る</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <span class="hero-badge">医師 × 経営者<b>当事者の伴走</b></span>
+        <span class="pill">開業前に、先回りして整理する</span>
+        <h3 style="margin-bottom:16px">開業前に手を打つ、4つの不安</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy)"><span style="width:26px;height:26px;border-radius:8px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-size:.78rem;font-weight:800;flex:none">01</span>集患<span style="font-weight:500;color:var(--gray);font-size:.86rem">／ 予約が埋まるか</span></li>
+          <li style="display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy)"><span style="width:26px;height:26px;border-radius:8px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-size:.78rem;font-weight:800;flex:none">02</span>資金繰り<span style="font-weight:500;color:var(--gray);font-size:.86rem">／ 投資を回収できるか</span></li>
+          <li style="display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy)"><span style="width:26px;height:26px;border-radius:8px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-size:.78rem;font-weight:800;flex:none">03</span>採用・運営<span style="font-weight:500;color:var(--gray);font-size:.86rem">／ 人が定着するか</span></li>
+          <li style="display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy)"><span style="width:26px;height:26px;border-radius:8px;background:var(--blue-light);color:var(--blue);display:grid;place-items:center;font-size:.78rem;font-weight:800;flex:none">04</span>院長の時間<span style="font-weight:500;color:var(--gray);font-size:.86rem">／ 抱え込まないか</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Problem ===== -->
+<section class="problem">
+  <div class="wrap">
+    <div class="prob-intro">
+      <span class="eyebrow" style="color:#ff8b92">CHALLENGE</span>
+      <h2 class="sec-title">開業の不安は、「開業の先」にあります。</h2>
+      <p style="margin-top:18px">立地を決め、内装を整え、開業日を迎える——多くの開業支援は、そこで役目を終えます。<br>しかし本当に難しいのは、開業した「その先」です。</p>
+    </div>
+    <div class="prob-cards">
+      <div class="prob-card">
+        <div class="num">集患</div>
+        <h4>借入返済が始まる月に、予約が埋まっていなかったら。</h4>
+      </div>
+      <div class="prob-card">
+        <div class="num">資金繰り</div>
+        <h4>初期投資は膨らむのに、開業直後は売上が読めない。</h4>
+      </div>
+      <div class="prob-card">
+        <div class="num">採用・運営</div>
+        <h4>採用した受付や看護スタッフが、定着しなかったら。</h4>
+      </div>
+      <div class="prob-card">
+        <div class="num">院長の時間</div>
+        <h4>診療の合間に、経理も労務も採用も抱え込むことになったら。</h4>
+      </div>
+    </div>
+    <p class="prob-closer">これらは開業後に突然起きるのではなく、多くが<span class="em">“開業前の設計不足”</span>として始まります。</p>
+  </div>
+</section>
+
+<!-- ===== Solution (不安→具体的解決) ===== -->
+<section class="solution" id="solution">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">SOLUTION</span>
+      <h2 class="sec-title">開業前に潰すべき不安には、順番があります。</h2>
+      <p class="lead">失敗の多くは、開業後の不運ではなく、開業前の設計で防げます。JMIは、勤務医の先生が抱える不安を4つに分け、開業前に一つずつ手を打ちます。</p>
+    </div>
+    <div class="sol-grid">
+
+      <div class="sol-card">
+        <span class="sol-cat">01 ／ 集患</span>
+        <h3>開業日に看板を出してから、集患を考えるのは遅い。</h3>
+        <div class="sol-anxiety"><span class="z-lbl">ありがちな不安</span><p>「本当に患者さんは来るのか」。一番口にしづらく、一番重く抱えている不安です。家賃も人件費も借入返済も、待ってくれません。</p></div>
+        <div class="sol-do"><span class="z-lbl">JMIの打ち手</span><p>物件決定前から診療圏・競合・想定患者層を確認し、診療メニュー・Web・広告・予約導線まで開業前に設計します。<span class="em">「どこで・誰に・何を理由に選ばれるか」を先に決めるから、広告費が予約につながる。</span>集患を自ら実行してきた代表が設計します。</p></div>
+      </div>
+
+      <div class="sol-card">
+        <span class="sol-cat">02 ／ 資金繰り・初期投資</span>
+        <h3>初期投資は「安くする」より「回収できる形にする」。</h3>
+        <div class="sol-anxiety"><span class="z-lbl">ありがちな不安</span><p>内装、医療機器、採用、広告——開業前の支出は想像以上に膨らみます。しかも開業直後は売上が安定しない。不安の本質は金額ではなく「この投資を回収できるのか」です。</p></div>
+        <div class="sol-do"><span class="z-lbl">JMIの打ち手</span><p>内装は複数のクリニック専門業者を比較し、医療機器は必要なものと導入タイミングを整理します。<span class="em">開業時に要るもの・後から足せるものを分けるから、資金の余力を残せる。</span>その余力を、開業後の広告や採用に回せます。</p></div>
+      </div>
+
+      <div class="sol-card">
+        <span class="sol-cat">03 ／ 採用・運営</span>
+        <h3>開業の成否は、開業前の「採用と仕組み」で半分決まる。</h3>
+        <div class="sol-anxiety"><span class="z-lbl">ありがちな不安</span><p>スタッフは集まるのか、採用しても定着するのか、教育する余裕はあるのか。受付や看護スタッフが安定しないと、診療の質も患者満足も揺らぎます。院長一人では片手間になりがちです。</p></div>
+        <div class="sol-do"><span class="z-lbl">JMIの打ち手</span><p>必要な人員体制と役割分担を開業前に設計し、予約・受付・問い合わせ対応の業務フロー立ち上げまで支援します。<span class="em">流れを先に固めるから、スタッフが迷わず動け、定着につながる。</span></p></div>
+      </div>
+
+      <div class="sol-card">
+        <span class="sol-cat">04 ／ 院長の時間</span>
+        <h3>院長が全部見る体制は、早い段階で限界が来る。</h3>
+        <div class="sol-anxiety"><span class="z-lbl">ありがちな不安</span><p>診療、スタッフ対応、経理、レセプト、労務、問い合わせ。開業後は医師以外の仕事が一気に増えます。夜に数字を見て、休日に採用を考え、診療中も経営判断が頭を離れない——そんな状態になりがちです。</p></div>
+        <div class="sol-do"><span class="z-lbl">JMIの打ち手</span><p>総務・経理・レセプト・労務などのバックオフィスを支援し、広告運用の内製体制も活用します。<span class="em">最初から院長依存にしない仕組みを決めるから、診療に集中できる時間を守れる。</span></p></div>
+      </div>
+
+    </div>
+    <p class="sol-closer">開業後に院長が毎日判断に追われるのではなく、診療に集中しながら、見るべき数字と任せる業務が整理された状態を目指します。<br>無料相談では、この4つを一緒に棚卸しします。今の状況のどこに不安があるか、整理するところから始められます。</p>
+    <div style="text-align:center;margin-top:30px">
+      <a href="#contact" class="btn btn-primary btn-arrow">開業の不安を相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Strength ===== -->
+<section class="strength" id="strength">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">STRENGTH</span>
+      <h2 class="sec-title">JMIが選ばれる、3つの理由</h2>
+    </div>
+    <div class="str-list">
+      <div class="str-card">
+        <div class="str-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14c3.3 0 6 2.2 6 5v1H6v-1c0-2.8 2.7-5 6-5Z"/><circle cx="12" cy="8" r="4"/></svg></div>
+        <span class="no">REASON 01</span>
+        <h3>開業後に詰まる論点を、医師経営者の視点で先に潰す</h3>
+        <p>代表自身が複数のクリニックを開業・運営してきました。開業後に判断を迫られる論点を、当事者の視点で開業前に洗い出し、先に手を打ちます。</p>
+      </div>
+      <div class="str-card">
+        <div class="str-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2.4"/></svg></div>
+        <span class="no">REASON 02</span>
+        <h3>集患・資金・採用・実務を、同じ事業計画の中で見る</h3>
+        <p>集患、資金繰り、採用、総務・経理・レセプト・労務。バラバラに考えず、一つの事業計画の中で整合させて設計します。</p>
+      </div>
+      <div class="str-card">
+        <div class="str-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M7 8c0-2 2-3 5-3s5 1 5 3-2 3-5 3-5 1-5 3 2 3 5 3 5-1 5-3"/></svg></div>
+        <span class="no">REASON 03</span>
+        <h3>内装・機器・広告費を、初期投資と回収計画の両面で設計する</h3>
+        <p>内装は複数の専門業者を比較し、機器は導入タイミングを整理。広告費も含め、初期投資と回収計画の両面から判断します。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <a href="#services" class="btn btn-ghost btn-arrow">支援範囲を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">RESULTS</span>
+      <h2 class="sec-title">数字で見るJMI</h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <span class="tag">新規患者数</span>
+        <b>約20,000<small style="font-size:1rem">人</small></b>
+        <div class="lbl">西梅田シティクリニック／<br>開業後1年間の新規患者数<sup>※1</sup></div>
+      </div>
+      <div class="stat-box">
+        <span class="tag">代表</span>
+        <b style="font-size:1.7rem">医師 × 経営者</b>
+        <div class="lbl">自らクリニックを開業・<br>経営してきた当事者</div>
+      </div>
+      <div class="stat-box">
+        <span class="tag">相談料</span>
+        <b>0<small style="font-size:1rem">円</small></b>
+        <div class="lbl">初回相談は無料。<br>その場での契約は不要です</div>
+      </div>
+      <div class="stat-box">
+        <span class="tag">対応領域</span>
+        <b style="font-size:1.7rem">開業前〜開業後</b>
+        <div class="lbl">集患・資金繰り・採用・<br>実務まで4領域を支援</div>
+      </div>
+    </div>
+    <p style="text-align:center;color:#9aa7b3;font-size:.82rem;margin-top:22px;line-height:1.8">
+      ※1 西梅田シティクリニックにおける開業後1年間の新規患者数です。集計期間・対象・「新規」の定義は確定情報に基づき注記します。<br>
+      ※ その他の支援実績（支援院数・経験年数など）は、期間・対象・定義を確定のうえ順次掲載します。
+    </p>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">SERVICE</span>
+      <h2 class="sec-title">サービス</h2>
+      <p class="lead">物件選びの前から、開業後の数字づくりまで。先生のクリニックを4つの領域で支えます。</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-no">01</div>
+        <div class="svc-body">
+          <h3>開業前コンサルティング &amp; ブランディング</h3>
+          <p>先生の理想とする医療を、事業として成立する形へ。ブランド設計から立地選定まで。</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-no">02</div>
+        <div class="svc-body">
+          <h3>設備・内装のコスト最適化</h3>
+          <p>専門業者の比較と自社の医療機器調達力で、品質を保ちながらコストを抑える。</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-no">03</div>
+        <div class="svc-body">
+          <h3>開業後の包括的経営サポート</h3>
+          <p>集患マーケから総務・経理・レセプト・労務まで。収益化まで伴走する。</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-no">04</div>
+        <div class="svc-body">
+          <h3>テクノロジー / AIによる効率化</h3>
+          <p>LINE自動応答や広告運用の内製化で、運営を軽く、コストを賢く。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Flow ===== -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FLOW</span>
+      <h2 class="sec-title">開業までの流れ</h2>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step"><div class="circle">1</div><span class="st">STEP 01</span><h4>無料相談・<br>ヒアリング</h4></div>
+      <div class="flow-step"><div class="circle">2</div><span class="st">STEP 02</span><h4>コンセプト設計・<br>事業計画</h4></div>
+      <div class="flow-step"><div class="circle">3</div><span class="st">STEP 03</span><h4>立地選定・<br>物件決定</h4></div>
+      <div class="flow-step"><div class="circle">4</div><span class="st">STEP 04</span><h4>内装・設備・<br>採用・開業準備</h4></div>
+      <div class="flow-step"><div class="circle">5</div><span class="st">STEP 05</span><h4>開業 →<br>経営サポートへ</h4></div>
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <a href="#contact" class="btn btn-primary btn-arrow">開業の不安を相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Message ===== -->
+<section class="message" id="message">
+  <div class="wrap msg-grid">
+    <div class="msg-photo"><img src="assets/representative.jpg" alt="代表 写真"></div>
+    <div>
+      <span class="eyebrow" style="color:#ff8b92">MESSAGE</span>
+      <h2 class="sec-title">医師だからこそ、<br>医師の開業に責任を持てる。</h2>
+      <p>私自身、臨床の現場に立ちながら、自らクリニックを開業し、経営してきました。理想の医療と、経営として続けることの両立がどれほど難しいか、当事者として知っています。</p>
+      <p>だからJMIは、アドバイスして終わりにはしません。先生の経営に深く入り込み、結果が出るまで隣を走り続けます。開業を、続く経営に変える。それが私たちの仕事です。</p>
+      <div class="msg-sign">代表取締役　赤松 敬之<small>株式会社ジャパンメディカルイノベーション</small></div>
+      <div style="margin-top:28px"><a href="#" class="btn btn-ghost btn-arrow" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.6)">代表・会社概要を見る</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Case & Interview ===== -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">CASE &amp; INTERVIEW</span>
+      <h2 class="sec-title">事例と、現場の声。</h2>
+    </div>
+
+    <!-- 公開できる仮置きパネル（実データが揃うまでの表示） -->
+    <div class="cases-notice">
+      <h3>支援事例とインタビューは、許諾を確認のうえ順次掲載していきます。</h3>
+      <p>初回相談では、これまでの開業・運営で整理してきた論点を、公開できる範囲でお話しします。</p>
+    </div>
+
+    <!-- 実データ差し込み用ひな形（事例カード・インタビューQ&A）。許諾確認のうえ本番化する。
+    <div class="case-grid">
+
+      <article class="case-card">
+        <div class="case-photo">事例写真</div>
+        <div class="case-inner">
+          <span class="case-tag">自社運営事例</span>
+          <h3><span class="ph">事例の見出し（成果がひと目で伝わる一文）</span></h3>
+          <div class="case-meta">
+            <span>診療科：</span>
+            <span>エリア：</span>
+            <span>規模：</span>
+          </div>
+          <div class="case-block"><span class="lbl">課題（Before）</span><p class="ph">開業前に抱えていた課題を記載します。</p></div>
+          <div class="case-block is-do"><span class="lbl">JMIの支援</span><p class="ph">実際に行った支援内容を記載します。</p></div>
+          <div class="case-block is-result"><span class="lbl">結果（After）</span><p class="ph">結果を記載します（数値は集計期間・対象・定義を明記）。</p></div>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-photo">事例写真</div>
+        <div class="case-inner">
+          <span class="case-tag">支援事例</span>
+          <h3><span class="ph">事例の見出し（成果がひと目で伝わる一文）</span></h3>
+          <div class="case-meta">
+            <span>診療科：</span>
+            <span>エリア：</span>
+            <span>規模：</span>
+          </div>
+          <div class="case-block"><span class="lbl">課題（Before）</span><p class="ph">支援前に抱えていた課題を記載します。</p></div>
+          <div class="case-block is-do"><span class="lbl">JMIの支援</span><p class="ph">実際に行った支援内容を記載します。</p></div>
+          <div class="case-block is-result"><span class="lbl">結果（After）</span><p class="ph">結果を記載します（数値は集計期間・対象・定義を明記）。</p></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="interview-card">
+      <div class="interview-photo">インタビュー写真</div>
+      <div class="interview-body">
+        <span class="iv-tag">INTERVIEW ／ 開業した院長の声</span>
+        <p class="iv-quote ph">「支援を受けた院長の発言から、象徴的な一文を引用します。」</p>
+        <div class="iv-name ph">氏名 先生<small>クリニック名 院長</small></div>
+        <div class="iv-qa">
+          <p class="iv-q"><span>Q.</span>JMIに開業の相談をしたきっかけは何でしたか？</p>
+          <p class="iv-a ph">院長本人の回答を記載します。</p>
+        </div>
+        <div class="iv-qa">
+          <p class="iv-q"><span>Q.</span>実際に支援を受けて、どんな点が役立ちましたか？</p>
+          <p class="iv-a ph">院長本人の回答を記載します。</p>
+        </div>
+        <div class="iv-qa">
+          <p class="iv-q"><span>Q.</span>これから開業を考える先生へ、伝えたいことは？</p>
+          <p class="iv-a ph">院長本人の回答を記載します。</p>
+        </div>
+      </div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="sec-title">よくあるご質問</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-q"><span class="q">Q</span>まだ開業するか迷っている段階でも相談できますか？<span class="ico">＋</span></summary>
+        <div class="faq-a">はい、大歓迎です。「開業すべきか」という入口の段階から、率直にご相談に乗ります。無理に開業をおすすめすることはありません。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="q">Q</span>費用はどのくらいかかりますか？<span class="ico">＋</span></summary>
+        <div class="faq-a">ご支援内容（開業前のみ／開業後のみ／開業前から開業後まで通してなど）によって異なります。まずは無料相談で、必要な範囲とおおよその費用感をご説明します。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="q">Q</span>開業後の経営サポートだけをお願いすることもできますか？<span class="ico">＋</span></summary>
+        <div class="faq-a">可能です。すでに開業されていて、集患や経営にお悩みのクリニックへの立て直し支援も行っています。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="q">Q</span>相談したら、契約しなければいけませんか？<span class="ico">＋</span></summary>
+        <div class="faq-a">いいえ。相談は無料で、その後の契約を強制することはありません。まずはお気軽にご相談ください。</div>
+      </details>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="#" class="btn btn-ghost btn-arrow">すべての質問を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact (Form) ===== -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+
+    <div class="contact-intro">
+      <span class="eyebrow">CONTACT</span>
+      <h2 class="sec-title">開業の不安を、まず整理することから。</h2>
+      <p class="lead">まだ開業すると決めていなくても大丈夫です。無理に開業をおすすめすることはありません。現状とお悩みをお聞かせください。医師であり経営者である代表とチームが、先生に合った進め方をご提案します。</p>
+      <div class="contact-points">
+        <div class="pt"><span class="ck">✓</span><p>今ある不安の棚卸し<small>集患・資金繰り・採用・院長の時間。どこに不安があるかを整理します。</small></p></div>
+        <div class="pt"><span class="ck">✓</span><p>進め方の選択肢<small>開業前のみ／開業後のみ／開業前から開業後まで。状況に合う支援範囲をご説明します。</small></p></div>
+        <div class="pt"><span class="ck">✓</span><p>次の一歩<small>初回相談は無料。その場での契約は不要です。まずは話すところから始められます。</small></p></div>
+      </div>
+    </div>
+
+    <!-- 要決定：フォーム送信先／送信完了表示／プライバシーポリシーURL／自動返信の有無／電話受付時間 -->
+    <form class="form-card" action="#" method="post">
+      <div class="form-row">
+        <label for="cf-name">お名前<span class="req">必須</span></label>
+        <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="山田 太郎">
+      </div>
+      <div class="form-two">
+        <div class="form-row">
+          <label for="cf-email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="example@mail.com">
+        </div>
+        <div class="form-row">
+          <label for="cf-tel">電話番号<span class="opt">任意</span></label>
+          <input type="tel" id="cf-tel" name="tel" autocomplete="tel" placeholder="090-0000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="cf-job">ご職業・診療科<span class="opt">任意</span></label>
+        <input type="text" id="cf-job" name="job" placeholder="例：勤務医／内科">
+      </div>
+      <div class="form-row">
+        <label for="cf-stage">開業の検討状況<span class="req">必須</span></label>
+        <select id="cf-stage" name="stage" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="considering">開業するか迷っている</option>
+          <option value="planning">開業を具体的に検討している</option>
+          <option value="preparing">開業準備を進めている</option>
+          <option value="opened">すでに開業済み（経営の相談）</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="cf-message">ご相談内容<span class="req">必須</span></label>
+        <textarea id="cf-message" name="message" required placeholder="現状のお悩みや、ご相談されたいことをご記入ください。"></textarea>
+      </div>
+      <label class="form-consent">
+        <input type="checkbox" name="consent" required>
+        <span><!-- 要：プライバシーポリシー整備 --><a href="#">個人情報の取り扱い</a>に同意のうえ送信します。<span class="req">必須</span></span>
+      </label>
+      <button type="submit" class="btn btn-primary btn-arrow">この内容で相談する</button>
+      <p class="form-note">無理な勧誘はいたしません。初回相談は無料・契約不要です。</p>
+    </form>
+
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">株式会社ジャパンメディカルイノベーション</div>
+        <p>Japan Medical Innovation Inc.<br>
+          大阪府大阪市北区梅田2-1-22 野村不動産西梅田ビル12階<br>
+          TEL：06-6485-8584</p>
+      </div>
+      <div class="foot-col">
+        <h5>SERVICE</h5>
+        <a href="#services">開業前コンサルティング</a>
+        <a href="#services">設備・内装のコスト最適化</a>
+        <a href="#services">開業後の経営サポート</a>
+        <a href="#services">テクノロジー / AI化</a>
+      </div>
+      <div class="foot-col">
+        <h5>COMPANY</h5>
+        <a href="#strength">私たちの強み</a>
+        <a href="#flow">開業までの流れ</a>
+        <a href="#cases">事例・インタビュー</a>
+        <a href="#message">代表紹介・会社概要</a>
+        <a href="#faq">よくあるご質問</a>
+        <a href="#contact">無料相談・お問い合わせ</a>
+      </div>
+    </div>
+    <div class="copy">© Japan Medical Innovation Inc. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- ===== Floating CTA ===== -->
+<div class="float-cta">
+  <a href="#contact" class="btn btn-primary">開業の不安を相談する</a>
+</div>
+
+</body>
+</html>
