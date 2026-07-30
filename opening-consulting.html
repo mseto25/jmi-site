@@ -537,19 +537,22 @@
 
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
+
     <div class="contact-intro">
       <span class="eyebrow">CONTACT</span>
-      <h2 class="sec-title">無料個別相談のお申し込み</h2>
-      <p class="lead">入力項目は最小限にしています。無理な営業はいたしません。内容を確認後、担当者よりご連絡します。</p>
+      <h2 class="sec-title">開業の不安を、まず整理することから。</h2>
+      <p class="lead">まだ開業すると決めていなくても大丈夫です。無理に開業をおすすめすることはありません。現状とお悩みをお聞かせください。医師であり経営者である代表とチームが、先生に合った進め方をご提案します。</p>
       <div class="contact-points">
-        <div class="pt"><span class="ck">✓</span><p>先生のキャリアとやりたい医療を整理<small>保険診療・自由診療の方向性も含めて伺います。</small></p></div>
-        <div class="pt"><span class="ck">✓</span><p>開業の選択肢を確認<small>立地、時期、支援範囲の考え方をご説明します。</small></p></div>
-        <div class="pt"><span class="ck">✓</span><p>契約前提ではありません<small>まずは話を聞いてみたい、という段階で大丈夫です。</small></p></div>
+        <div class="pt"><span class="ck">✓</span><p>今ある不安の棚卸し<small>集患・資金繰り・採用・院長の時間。どこに不安があるかを整理します。</small></p></div>
+        <div class="pt"><span class="ck">✓</span><p>進め方の選択肢<small>開業前のみ／開業後のみ／開業前から開業後まで。状況に合う支援範囲をご説明します。</small></p></div>
+        <div class="pt"><span class="ck">✓</span><p>次の一歩<small>初回相談は無料。その場での契約は不要です。まずは話すところから始められます。</small></p></div>
       </div>
     </div>
+
+    <!-- 要決定：フォーム送信先／送信完了表示／プライバシーポリシーURL／自動返信の有無／電話受付時間 -->
     <form class="form-card" action="#" method="post">
       <div class="form-row">
-        <label for="cf-name">氏名<span class="req">必須</span></label>
+        <label for="cf-name">お名前<span class="req">必須</span></label>
         <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="山田 太郎">
       </div>
       <div class="form-two">
@@ -563,42 +566,32 @@
         </div>
       </div>
       <div class="form-row">
-        <label for="cf-dept">診療科<span class="req">必須</span></label>
-        <select id="cf-dept" name="department" required>
+        <label for="cf-job">ご職業・診療科<span class="opt">任意</span></label>
+        <input type="text" id="cf-job" name="job" placeholder="例：勤務医／内科">
+      </div>
+      <div class="form-row">
+        <label for="cf-stage">開業の検討状況<span class="req">必須</span></label>
+        <select id="cf-stage" name="stage" required>
           <option value="" disabled selected>選択してください</option>
-          <option>内科</option>
-          <option>皮膚科</option>
-          <option>小児科</option>
-          <option>整形外科</option>
-          <option>精神科・心療内科</option>
-          <option>眼科</option>
-          <option>耳鼻咽喉科</option>
-          <option>婦人科</option>
-          <option>美容・自由診療</option>
-          <option>その他</option>
+          <option value="considering">開業するか迷っている</option>
+          <option value="planning">開業を具体的に検討している</option>
+          <option value="preparing">開業準備を進めている</option>
+          <option value="opened">すでに開業済み（経営の相談）</option>
+          <option value="other">その他</option>
         </select>
       </div>
       <div class="form-row">
-        <label for="cf-timing">開業検討時期<span class="req">必須</span></label>
-        <select id="cf-timing" name="timing" required>
-          <option value="" disabled selected>選択してください</option>
-          <option>1年以内</option>
-          <option>1〜3年</option>
-          <option>3年以上先・未定</option>
-          <option>開業済み</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label for="cf-message">ご相談内容<span class="opt">任意</span></label>
-        <textarea id="cf-message" name="message" placeholder="検討中の内容や、相談したいことがあればご記入ください。"></textarea>
+        <label for="cf-message">ご相談内容<span class="req">必須</span></label>
+        <textarea id="cf-message" name="message" required placeholder="現状のお悩みや、ご相談されたいことをご記入ください。"></textarea>
       </div>
       <label class="form-consent">
         <input type="checkbox" name="consent" required>
-        <span><a href="#">個人情報の取り扱い</a>に同意のうえ送信します。<span class="req">必須</span></span>
+        <span><!-- 要：プライバシーポリシー整備 --><a href="#">個人情報の取り扱い</a>に同意のうえ送信します。<span class="req">必須</span></span>
       </label>
-      <button type="submit" class="btn btn-primary btn-arrow">無料相談を申し込む</button>
-      <p class="form-note">送信完了後、原則として数営業日以内にご連絡します。送信先・完了ページ・プライバシーポリシーURLは公開前に設定してください。</p>
+      <button type="submit" class="btn btn-primary btn-arrow">この内容で相談する</button>
+      <p class="form-note">無理な勧誘はいたしません。初回相談は無料・契約不要です。</p>
     </form>
+
   </div>
 </section>
 
